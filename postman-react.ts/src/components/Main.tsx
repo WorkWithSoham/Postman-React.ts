@@ -39,6 +39,7 @@ export const Main = () => {
 
     const ParamsCallback = (params: Parameters[]) => {
         if (params.length && params[0].key === 'NA' && params[0].key === 'NA') {
+            setFinalRequest({ ...finalRequest, parameters: [] })
             setRenderBools({ ...renderBools, paramsBox: true })
         } else if (params.length !== 0) {
             setFinalRequest({ ...finalRequest, parameters: params })
