@@ -70,7 +70,18 @@ export const Main = () => {
             }
             {finalResponseReceived ?
                 <div className="m-3 p-3 border border-danger border-3 rounded" style={{ maxHeight: '70vh', overflowY: 'scroll' }}>
-                    <pre>
+                    <button
+                    className='btn btn-secondary btn-sm'
+                    style={{ float: 'right' }}
+                    onClick={() => {
+                        navigator.clipboard.writeText(JSON.stringify(ApiResponse))
+                        alert('Response copied to clipboard!')
+                    }}
+                    >
+                        Copy
+                    </button>
+                    <h5 className="mb-2">Response :</h5>
+                    <pre className='m-3 overflow-auto'>
                         {JSON.stringify(ApiResponse, null, 2)}
                     </pre>
                     <button
